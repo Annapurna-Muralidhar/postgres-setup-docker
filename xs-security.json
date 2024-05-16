@@ -1,5 +1,22 @@
 {
-  "scopes": [],
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.CloudKitchenAdmin",
+      "description": "CloudKitchenAdmin"
+    }
+  ],
   "attributes": [],
-  "role-templates": []
+  "role-templates": [
+    {
+      "name": "CloudKitchenAdmin",
+      "description": "Role for Administration of CloudKitchen",
+      "scope-references": [
+        "$XSAPPNAME.CloudKitchenAdmin"
+      ]
+    }
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": ["https://*.cfapps.us10-001.hana.ondemand.com/**"]
+ }
+  
 }
