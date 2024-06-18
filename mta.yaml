@@ -24,6 +24,7 @@ modules:
     requires:
       - name: postgres
       - name: CloudKitchen-auth
+      - name: CloudKitchen-dest
       
   - name: CloudKitchen
     type: approuter.nodejs
@@ -42,6 +43,7 @@ modules:
           url: ~{srv-url}
           forwardAuthToken: true
       - name: CloudKitchen-auth
+      - name: CloudKitchen-dest
 
 
   - name: CloudKitchen-postgres-deployer
@@ -72,3 +74,8 @@ resources:
       config:
         xsappname: CloudKitchen-${org}-${space}
         tenant-mode: dedicated
+  - name: CloudKitchen-dest
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
