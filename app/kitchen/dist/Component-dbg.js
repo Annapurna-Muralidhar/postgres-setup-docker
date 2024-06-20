@@ -3,7 +3,7 @@ sap.ui.define(
     function (Component) {
         "use strict";
 
-        return Component.extend("cloudkitchen.Component", {
+        return Component.extend("com.satinfotech.cloudapps.kitchen.Component", {
             metadata: {
                 manifest: "json"
             }

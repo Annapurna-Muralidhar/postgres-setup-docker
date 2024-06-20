@@ -1,50 +1,60 @@
 {
-  "name": "CloudKitchen",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@cap-js/postgres": "^1.7.0",
-    "@sap/cds": "^7",
-    "@sap/xssec": "^3",
-    "express": "^4",
-    "passport": "^0",
-    "pg": "^8.11.5"
-  },
-  "devDependencies": {
-    "@cap-js/sqlite": "^1",
-    "@sap/cds-dk": "^7.9.1",
-    "@sap/ux-specification": "^1.120.10",
-    "rimraf": "^3.0.2"
-  },
-  "scripts": {
-    "start": "cds-serve",
-    "watch-cloudkitchen": "cds watch --open cloudkitchen/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
-    "undeploy": "cf undeploy CloudKitchen --delete-services --delete-service-keys --delete-service-brokers",
-    "build": "rimraf resources mta_archives && mbt build --mtar archive",
-    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
-  },
-  "cds": {
-    "fiori": {
-      "lean_draft": true,
-      "bypass_draft": true
+    "name": "CloudKitchen",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@cap-js/postgres": "^1.7.0",
+        "@sap/cds": "^7",
+        "@sap/xssec": "^3",
+        "express": "^4",
+        "passport": "^0",
+        "pg": "^8.11.5"
     },
-    "requires": {
-      "db": {
-        "imp": "@cap-js/postgres",
-        "pool": {
-          "max": 20
+    "devDependencies": {
+        "@cap-js/sqlite": "^1",
+        "@sap/cds-dk": "^7.9.1",
+        "@sap/ux-specification": "^1.120.12",
+        "rimraf": "^3.0.2"
+    },
+    "scripts": {
+        "start": "cds-serve",
+        "watch-cloudkitchen": "cds watch --open cloudkitchen/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy CloudKitchen --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+        "watch-kitchen": "cds watch --open kitchen/webapp/index.html?sap-ui-xx-viewCache=false"
+    },
+    "cds": {
+        "fiori": {
+            "lean_draft": true,
+            "bypass_draft": true
+        },
+        "requires": {
+            "db": {
+                "imp": "@cap-js/postgres",
+                "pool": {
+                    "max": 20
+                }
+            },
+            "auth": {
+                "[production]": {
+                    "strategy": "JWT"
+                },
+                "[test]": {
+                    "strategy": "mock"
+                }
+            }
         }
-      },
-      "auth": "xsuaa"
-    }
-  },
-  "sapux": [
-    "app/cloudkitchen",
-    "app/project1",
-    "app/cloudkitchen"
-  ]
+    },
+    "sapux": [
+        "app/cloudkitchen",
+        "app/project1",
+        "app/cloudkitchen",
+        "app/kitchen",
+        "app/kitchen"
+    ]
 }

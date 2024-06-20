@@ -1,32 +1,32 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Thu May 16 2024 15:56:52 GMT+0530 (India Standard Time)|
+|**Generation Date and Time**<br>Tue Jun 18 2024 16:33:40 GMT+0530 (India Standard Time)|
 |**App Generator**<br>@sap/generator-fiori-elements|
 |**App Generator Version**<br>1.12.2|
 |**Generation Platform**<br>Visual Studio Code|
 |**Template Used**<br>List Report Page V4|
 |**Service Type**<br>Local Cap|
 |**Service URL**<br>http://localhost:4004/odata/v4/cloud-kitchen/
-|**Module Name**<br>cloudkitchen|
-|**Application Title**<br>manage cloud kitchen|
-|**Namespace**<br>|
+|**Module Name**<br>kitchen|
+|**Application Title**<br>Maintain Kitchen|
+|**Namespace**<br>com.satinfotech.cloudapps|
 |**UI5 Theme**<br>sap_horizon|
-|**UI5 Version**<br>1.124.0|
+|**UI5 Version**<br>1.124.1|
 |**Enable Code Assist Libraries**<br>False|
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|
 |**Main Entity**<br>Kitchen|
 
-## cloudkitchen
+## kitchen
 
-An SAP Fiori application.
+Maintain Kitchen
 
 ### Starting the generated app
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply start your CAP project and navigate to the following location in your browser:
 
-http://localhost:4004/cloudkitchen/webapp/index.html
+http://localhost:4004/kitchen/webapp/index.html
 
 #### Pre-requisites:
 
