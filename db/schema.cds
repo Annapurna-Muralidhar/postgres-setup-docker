@@ -1,6 +1,7 @@
 namespace com.satinfotech.cloudapps;
 using {managed,cuid} from '@sap/cds/common';
 
+
 entity Kitchen : managed,cuid {
     name : String(20);
     addr1:String(40);
