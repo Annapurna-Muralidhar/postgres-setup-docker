@@ -22,6 +22,10 @@ service CloudKitchen @(requires: 'authenticated-user') {
     null as ProductDescription: String(80)
   }
 
+    entity ProductLocal as projection on ClKitchen.ProductLocal;
+
+
 }
 
 annotate CloudKitchen.Kitchen with @odata.draft.enabled;
+annotate CloudKitchen.ProductLocal with @odata.draft.enabled;
