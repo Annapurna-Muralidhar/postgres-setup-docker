@@ -11,13 +11,16 @@ service CloudKitchen @(requires: 'authenticated-user') {
     { grant: ['DELETE'], to: 'CloudKitchenDelete'},
   ]) as projection on ClKitchen.Kitchen
 
- entity Products as projection on productapi.A_Product{
+ 
+
+    entity Products as projection on productapi.A_Product{
     Product,
     ProductType,
     BaseUnit,
-    ProductGroup
+    ProductGroup,
+    to_Description,
+    null as ProductDescription: String(80)
   }
-
 
 }
 
