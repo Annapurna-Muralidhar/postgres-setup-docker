@@ -15,6 +15,5 @@
       "authenticationType": "xsuaa",
       "csrfProtection": true
     }
-  ],
-  "welcomeFile": "/comsatinfotechcloudappskitchen"
+  ]
 }

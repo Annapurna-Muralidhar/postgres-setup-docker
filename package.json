@@ -71,6 +71,7 @@
     "app/cloudkitchen",
     "app/kitchen",
     "app/kitchen",
+    "app/productlocal",
     "app/productlocal"
   ]
 }
