@@ -18,7 +18,7 @@
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7.9.1",
-    "@sap/ux-specification": "^1.120.12",
+    "@sap/ux-specification": "^1.120.13",
     "rimraf": "^3.0.2"
   },
   "scripts": {
@@ -28,7 +28,8 @@
     "undeploy": "cf undeploy CloudKitchen --delete-services --delete-service-keys --delete-service-brokers",
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
     "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
-    "watch-kitchen": "cds watch --open kitchen/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-kitchen": "cds watch --open kitchen/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-productlocal": "cds watch --open productlocal/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "fiori": {
@@ -53,6 +54,8 @@
       "API_PRODUCT_SRV": {
         "kind": "odata-v2",
         "model": "srv/external/API_PRODUCT_SRV",
+        "csrf": true,
+        "csrfInBatch": true,
         "[production]": {
           "credentials": {
             "destination": "S4HANA",
@@ -67,6 +70,7 @@
     "app/project1",
     "app/cloudkitchen",
     "app/kitchen",
-    "app/kitchen"
+    "app/kitchen",
+    "app/productlocal"
   ]
 }
