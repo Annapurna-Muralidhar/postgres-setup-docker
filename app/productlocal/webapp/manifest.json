@@ -103,12 +103,26 @@
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
+              "initialLoad":true,
               "contextPath": "/ProductLocal",
               "variantManagement": "Page",
               "navigation": {
                 "ProductLocal": {
                   "detail": {
                     "route": "ProductLocalObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "actions": {
+                    "viewForm": {
+                      "press": "com.satinfotech.cloudapps.productlocal.ext.viewForm.viewForm.viewForm",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "viewForm"
+                    }
                   }
                 }
               }

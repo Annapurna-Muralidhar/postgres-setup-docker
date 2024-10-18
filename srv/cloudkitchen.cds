@@ -12,7 +12,7 @@ service CloudKitchen @(requires: 'authenticated-user') {
   ]) as projection on ClKitchen.Kitchen
 
  
-
+  entity Label           as projection on ClKitchen.Label;
     entity Products as projection on productapi.A_Product{
     Product,
     ProductType,
@@ -27,10 +27,36 @@ service CloudKitchen @(requires: 'authenticated-user') {
     Language,
     ProductDescription
   }
-    entity ProductLocal as projection on ClKitchen.ProductLocal;
+    entity ProductLocal as projection on ClKitchen.ProductLocal actions{action viewForm( 
+      unitValue:String,
+      labelname:String
+      @Common.ValueList: {
+        CollectionPath: 'Label', 
+        Label: 'Label',
+        Parameters: [
+          {
+            $Type: 'Common.ValueListParameterInOut',
+            LocalDataProperty: 'labelname',  
+            ValueListProperty: 'Label'    
+          }
+        ]
+      }
+      
+     
+    ) returns String;
+  } ;
 
 
 }
 
 annotate CloudKitchen.Kitchen with @odata.draft.enabled;
 annotate CloudKitchen.ProductLocal with @odata.draft.enabled;
+
+annotate CloudKitchen.Label with @(UI.LineItem: [
+    {
+        $Type: 'UI.DataField',
+        Value: Label
+    }
+],
+
+);

@@ -31,3 +31,11 @@ entity ProductLocal: managed {
     @title: 'Product Description'
     ProductDescription: String(40);
 }
+
+@cds.persistence.skip
+entity Label {
+
+      @title: 'Label'
+      Label : String(80);
+
+}
